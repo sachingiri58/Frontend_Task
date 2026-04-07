@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="calendar-outer">
+
+  <div class="binding" id="binding"></div>
+
+  <div class="main-layout">
+
+    <!-- LEFT SIDE -->
+    <div class="hero-side">
+      
+      <div class="hero-scene">
+        
+        <div class="hero-overlay"></div>
+
+        <div class="month-plate">
+          <div class="yr" id="hero-yr">2025</div>
+          <div class="mn" id="hero-mn">JANUARY</div>
+        </div>
+
+      </div>
+
+      <div class="notes-bar">
+        <div class="notes-label-sm">Monthly Notes</div>
+        <textarea class="hero-note" id="side-note" placeholder="Type your notes here..." oninput="saveSideNote()"></textarea>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="cal-side">
+
+      <div class="nav-strip">
+
+        <button class="nav-btn" onclick="changeMonth(-1)">←</button>
+
+        <div class="nav-heading">
+          <h2 id="nav-h2">January 2025</h2>
+          <p>Select a date range below</p>
+        </div>
+
+        <button class="nav-btn" onclick="changeMonth(1)">→</button>
+
+      </div>
+
+      <div class="grid-wrap">
+
+        <div class="dow-row">
+          <div class="dow">MON</div>
+          <div class="dow">TUE</div>
+          <div class="dow">WED</div>
+          <div class="dow">THU</div>
+          <div class="dow">FRI</div>
+          <div class="dow s">SAT</div>
+          <div class="dow u">SUN</div>
+        </div>
+
+        <div class="days" id="days"></div>
+
+      </div>
+
+      <div id="range-pill" class="range-pill" style="display:none">
+        <span id="pill-txt"></span>
+        <button onclick="clearSel()">✕ clear</button>
+      </div>
+
+      <div class="notes-panel">
+
+        <div class="notes-top">
+          <span class="notes-ttl">Notes</span>
+        </div>
+
+        <textarea class="notes-ta" id="main-note" placeholder="Add notes..." oninput="saveMainNote()"></textarea>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
